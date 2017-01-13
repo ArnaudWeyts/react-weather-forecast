@@ -8,7 +8,7 @@
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 DIRECTORY="build"
-GH_REF="github.com/ArnaudWeyts/react-book-list"
+GH_REF="github.com/ArnaudWeyts/react-weather-forecast"
 GH_USERNAME="Block-Bot"
 GH_USERMAIL="bot@weyts.xyz"
 
