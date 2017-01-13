@@ -7,10 +7,18 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 export function fetchWeather(city) {
   const url = `${ROOT_URL}&q=${city},be`;
-  const request = fetch(url);
+  const forecast =
+    fetch(url)
+     .then(function(response) {
+      return response.json()
+    }).then(function(json) {
+      return json;
+    }).catch(function(ex) {
+      console.log('parsing failed', ex)
+    });
 
   return {
     type: FETCH_WEATHER,
-    payload: request
+    payload: forecast
   };
 }
