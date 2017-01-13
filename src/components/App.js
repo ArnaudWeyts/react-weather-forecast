@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 
-class App extends Component {
+import SearchBar from '../containers/SearchBar';
+
+export default class App extends Component {
   render() {
     return (
       <div className="container">
-
+        <SearchBar />
       </div>
     );
   }
 }
-
-export default App;
