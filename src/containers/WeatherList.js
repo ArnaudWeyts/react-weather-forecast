@@ -5,7 +5,7 @@ import SimpleMap from '../components/SimpleMap';
 
 class WeatherList extends Component {
   renderWeather(cityData) {
-    const temps = cityData.list.map(values => values.main.temp);
+    const temps = cityData.list.map(values => values.main.temp - 273.15);
     const pressures = cityData.list.map(values => values.main.pressure);
     const humidities = cityData.list.map(values => values.main.humidity);
 
@@ -15,9 +15,9 @@ class WeatherList extends Component {
     return (
       <tr key={id}>
         <td><SimpleMap lat={lat} lon={lon}/></td>
-        <td><Chart data={temps} color="blue" units="K"/></td>
+        <td><Chart data={temps} color="orange" units="°C"/></td>
         <td><Chart data={pressures} color="green" units="hPa"/></td>
-        <td><Chart data={humidities} color="black" units="%" /></td>
+        <td><Chart data={humidities} color="blue" units="%" /></td>
       </tr>
     )
   }
@@ -28,9 +28,9 @@ class WeatherList extends Component {
         <thead>
           <tr>
             <th>City</th>
-            <th>Temperature (K)</th>
-            <th>Pressure (hPa)</th>
-            <th>Humidity (%)</th>
+            <th>Temperature</th>
+            <th>Pressure</th>
+            <th>Humidity</th>
           </tr>
         </thead>
         <tbody>
